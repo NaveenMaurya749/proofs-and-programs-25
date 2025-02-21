@@ -1,1 +1,62 @@
-/zd0jZ/i+47g/Y4eePFjHw1vi6f1efNsXS5OCHGpDU1pDe3EXmxhkTt7PyuV3eazH+FOlOQ4sGchhLDhJE8kr4mX/TVDilG3n9Hgt+YnLgKNIzE/aj/PzD4vs8+Hu+A+i0g80m+Pk+4A7hOacdNwFv65615CsvX4JyUtq553+0mEf0Y1IrDe+o8Zma5C476G37F/mIoijuHX7hut24/A99kqrr+wdBknbDWGbjRokEP48C0hRr2Ima71u6uHzlwNwy9CeL8bvS9XGQrSCVYBkVZAabsA7y2FRJ5Vj6WKHth8ZZgbZ8srHaDhpAsU5MqLp3EXTcvYIYMO6RPPwSC/nhq4sZcPWtJyWwoCURS+jjZgV+yRvED7uUp/BHdsy5h9SJptZ7ViNq5IHEMg+DQbfZuEk/k12Xxq6O+Jz/MPmQfNbMJ0DftmAQkgQLcjOBSv6XMGVVF0UjXcemp3kTzUWnbNZdc2iiwWgm0VHlO1gOakXdlpmmWGjUHSI4ogHu+9VUNrIyFlmTVrNPgysLx/18O8f2pYSXfM2df0ZisxKyIuPleGvRrlhcWwR/ofRI2pK9HALKax56bX5tZYE9Cy7nplXf+CwPI354JAl/fouYlVFV4VwKKRCxUsq6YJe0aAy+wHYjhkaaTkQv/63F23uvwdDo0P4Pxw1zn6A6wRAnpbjyt/vvmAgzU+YsdvMUUvd4s0tK9yOpdcyFpVZ6wSMSYtIvw1Fl7PRO/1kInXMrRPYoEkAc73oD+I8yl3nPzlMSCZWGjm3iucvCPUy3yWI9yDeGkxMy+YxqJ6J4jgDGxy3yD8AyOsfjWS7hYjN/OCiQcGlP1tOvXIAruqhLhSqNOKCoqDxIBsO88NADVRzE5pfTegbOpV3WLLL51CSy0EWgwpp7V9wBc0mRthLSHDMtqDmrIx1FSYsUVSjjr6PLkd9ePOWaBmNFSi+SG1sD1jSCirwXXSSL0IBabkHT4U6Oz7P4Bpcu2eav/gEL1myqev1MGmXoHQ+Q5bGZzsaasDA2vvqFXHcuCDcrJSgFkWNdzQpKo/PY/fDafbTD9lRB91ynLiPBFJWCq9+29JnqwoChN4WZpn3q+UnN31ujvBTaejaWVAldRKIOHSCMqV+RYus7fEji++VgQHdWV0l50ccT96VrDhKQFmDISN9MpVhuWhRIAGPXkmGiyQCxGUMkCjsRxEqGCquyB4yPtUn0VmgOEV067KzmnwLIg55b9TUHcfs+XMp+CLtklpRFqeyVI792wvhpgAKXItc804Jtv9TNFDkrrHMDsiV7dqvmgwnWNiPHTYXA5+dtqIqtnRy4EJEl2/I5AA9R8KnOA5+z8+wQcdj7nPMQJ35oOEu8nGZCTjbagerAeRR5AxanHkhJ6xpxFuw4zcW1Abeako0OIP8Mk1b7ZEvQUJAhjFsRL4n1s7klvVzHPxqmGqOOrVxAWc9LckIC8mCdKWtJyuykZsEZKTQ6+1Y+gdRDpIFbsWmQuDGLBFZSIODRjnyMItogg2ir41qQXFKhfinsgagGaQoU4W/cHHVD3G8YVMX7C+7lBTPc0derW/rk6CmTYLAyrTwjDFQfkw0RQbaSq4Oj0UWU18oSNolTSnXtSjObKeUtOYvpaerjXZ5nfXFDn8NTe9Uv4xAoLtqmutjAxrcXD3swq2R9xtGOih/XROLIqBAdQeAE1NUdLlZYqa6df6YRmh6aGeUaXLNp8opF5UeGvDunrcSen7jSulAak8+op39juEZiBIHzz8z6GPuxznAffDt4MjxAOOhEzNigwONcojSJ9aK0ZPqakHpG4TXKcBvtqIShJ2M96fQD9WvOPD+Aq+uGWXACcb5bZGIj05FzrCEI5W0B0XNV7dSJleZP5RAZGLrbjPue6Mun2GAFxoj44fg/7Fl7eWeXWSdPxF+tVliCTpnadN6fsDAYyoxKSq3HKlW1ZPf4Jgy/prqWkzEAteOxb78wni3D4zt3KGzSm2dfjkUBWYHrBTRIQOu2ey/2yfsa0RI/8qjSKGnRtMNXo=
+import Mathlib
+
+/-!
+# Recursion
+
+You have to make some recursive definitions and prove that they terminate.
+-/
+
+/-!
+## Fibonacci numbers
+
+These are defined by the identities:
+
+* `fib 0 = 1`
+* `fib 1 = 1`
+* `fib (n + 2) = fib (n + 1) + fib n`
+
+Complete the following definition:
+-/
+
+def fib (n : ℕ): ℕ :=
+  match n with
+  -- Change the code below (3 marks)
+  | 0 => 1
+  | 1 => 1
+  | m + 2 => fib (m + 1) + fib m
+
+/-! Test your definition with the following (uncomment the line below).-/
+example : fib 7 = 21 := by rfl
+
+/-!
+## Proving termination
+
+In the following, replace `partial def` by `def` and prove termination by choosing an appropriate function that decreases (2 marks).
+-/
+
+def f (a b : ℕ) : ℕ :=
+  match a, b with
+  | k + 2, l => f k (l + 1) + 1
+  | k, l + 2 => f (k + 1) l + 2
+  | _, _ => 1
+termination_by a + b
+
+/- Notes:
+ -- in either of the first two cases, a + b decreases by 1
+ -- in the third case, the function terminates
+-/
+
+/-!
+## Proving termination
+
+In the following, replace `partial def` by `def` and prove termination by choosing an appropriate function that decreases and proving the appropriate lemma (4 marks).
+-/
+
+def numSteps (step: Nat → Nat) (h : ∀n: Nat, step (n + 1) ≤ n)
+    (n: Nat) : Nat :=
+  match n with
+  | 0 => 0
+  | n + 1 =>
+    have h₀ : step (n + 1) ≤ n := h n -- having this lemma allows lean to prove it terminates
+    numSteps step h (step (n + 1)) + 1
+termination_by n
