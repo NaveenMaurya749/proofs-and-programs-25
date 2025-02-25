@@ -214,3 +214,4 @@ def Decidable.decide : (p : Prop) → [h : Decidable p] → Bool :=
 fun p [h : Decidable p] ↦ Decidable.casesOn h (fun x ↦ false) fun x ↦ true
 -/
 #print decide
+#eval decide (0 == 1)

@@ -42,7 +42,7 @@ deriving Inhabited, Repr
 
 namespace BinTree
 
-def eg₁ : BinTree ℕ  := leaf 3
+def eg₁ :  BinTree ℕ  := leaf 3
 
 def eg₂ : BinTree ℕ := node (leaf 3) (leaf 4)
 
@@ -111,8 +111,10 @@ def eg₁ : BoolTree ℕ := leaf 3
 
 def eg₂ : BoolTree ℕ := node (fun _ => leaf 3)
 
-def eg₃ : BoolTree ℕ :=
-  node (fun b => if b then leaf 3 else leaf 4)
+def eg₃ : BoolTree ℕ := node (fun b => if b then leaf 3 else leaf 4)
+
+def eg₄ : BoolTree ℕ :=
+  node (fun b => if b then node (fun b => if b then leaf 3 else leaf 4) else node (fun b => if b then leaf 5 else leaf 6))
 
 def toList {α : Type} : BoolTree α → List α
   | leaf a => [a]
@@ -123,6 +125,7 @@ def toBinTree {α : Type} : BoolTree α  → BinTree α
   | node f => BinTree.node (toBinTree (f true)) (toBinTree (f false))
 
 #eval eg₃.toBinTree.toList
+#eval eg₄.toBinTree.toList
 
 def ofBinTree {α : Type} : BinTree α → BoolTree α
   | BinTree.leaf a => leaf a
@@ -179,7 +182,7 @@ def evens : List ℕ → List Bool :=
 
 #eval evens [1, 2, 3, 4, 5]
 
-#check ℕ  = String
+#check ℕ = String
 
 /--
 error: failed to synthesize
