@@ -2,6 +2,9 @@ import Lean
 
 open Lean Meta Elab Term Tactic
 
+/-
+sorryAx.{u} (α : Sort u) (synthetic : Bool := false) : α
+-/
 #check sorryAx
 
 /-!

@@ -16,3 +16,7 @@ rev = "main"
 
 [[lean_lib]]
 name = "PfsProgs25"
+
+[[lean_exe]]
+name = "get_type"
+supportInterpreter = true

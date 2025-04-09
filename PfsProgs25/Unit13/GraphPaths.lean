@@ -49,3 +49,10 @@ theorem subsetsOfLengthSubset {α : Type} (n : ℕ) (xs : List α) : ∀ l, l �
 Set.Ioo.{u_1} {α : Type u_1} [Preorder α] (a b : α) : Set α
 -/
 #check Set.Ioo
+
+def graph₁ : SimpleGraph (Fin 4) :=
+  SimpleGraph.fromRel (fun x y ↦ !(x.val == y.val))
+
+-- def m₁ := graph₁.adjMatrix
+
+#check DecidableRel
